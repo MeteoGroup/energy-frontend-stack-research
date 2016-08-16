@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Adam Misiuda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+
+        <script type="text/javascript" src="/node_modules/core-js/client/shim.min.js"></script>
+        <script type="text/javascript" src="/node_modules/zone.js/dist/zone.js"></script>
+        <script type="text/javascript" src="/node_modules/reflect-metadata/Reflect.js"></script>
+        <script type="text/javascript" src="/node_modules/systemjs/dist/system.src.js"></script>
+        <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/systemjs.config.js"></script>
+        <script type="text/javascript" src="/app/MainComponentLoader.js"></script>
+        <script type="text/javascript" src="/app/example.js"></script>
+
+        <script type="text/javascript">
+            var loader = null,
+                squareComponentModule = null,
+                circleComponentModule = null;
+            // send requests for new components
+            Promise.all([
+                System.import("@angular/platform-browser-dynamic"),
+                System.import("app/sample-angular2-components/SquareComponent.js"),
+                System.import("app/sample-angular2-components/CircleComponent.js")
+            ]).then(function(modules) {
+                squareComponentModule = modules[1].SquareComponent;
+                circleComponentModule = modules[2].CircleComponent;
+                var modulesData = [{
+                    tagName: "square-component",
+                    module: squareComponentModule
+                },{
+                    tagName: "circle-component",
+                    module: circleComponentModule
+                }];
+                loader = new MainComponentLoader(modules[0].bootstrap, modulesData);
+                loader.initAlreadyAppended();
+                document.getElementById("dynamic-add").style.display = "block";
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="desc">
+            This example contains two Angular2 components: CircleComponent and SquareComponent.
+            Each time you add an element it will be bootstrapped and added as a "main" component (stand alone application).
+        </div>
+        <div id="dynamic-add">
+            <span>Add</span> <select id="component">
+                <option value="square-component">Square</option>
+                <option value="circle-component">Circle</option>
+            </select> <select id="add-containerId">
+                <option value="container">Outside box</option>
+                <option value="inner-container">Inside box</option>
+            </select> <br/> <span>at position</span> <input type="text" id="add-position" value="1" onkeyup="validatePositionElem(this)" />
+            <button onclick="addComponent()">Add</button>
+            <div class="clicks-menu-line">
+                <button onclick="clickAll('circle-component')">Click all circles</button>
+                <button onclick="clickAll('square-component')">Click all squares</button>
+                <button onclick="clickAllNTimes('circle-component', 100)">Send 100 clicks to circles</button>
+                <button onclick="clickAllNTimes('square-component', 100)">Send 100 clicks to squares</button>
+                <button id="reset-counters" onclick="resetCounters()">Reset counters</button>
+            </div>
+            <button onclick="startJqueryAnimations()">Start jQuery animations</button>
+            <div id="clicks-counter"></div>
+        </div>
+        <hr/>
+        <span id="container">
+            <div class="empty-component"></div>
+            <square-component id="f1">Loading...</square-component>
+            <span id="inner-container">
+                <square-component id="f2">Loading...</square-component>
+                <div class="empty-component"></div>
+            </span>
+            <circle-component id="s1">Loading...</circle-component>
+        </span>
+        <div id="jquery-box-container"></div>
+        <script>
+        initListeners();
+        setClickCounterTo(0);
+        </script>
+    </body>
+</html>

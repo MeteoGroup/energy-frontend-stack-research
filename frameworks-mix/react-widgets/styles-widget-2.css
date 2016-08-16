@@ -1,0 +1,12 @@
+.react-widget-2 {
+    background: #1565C0;
+    color: #fff;
+}
+
+.react-widget-2 .fa-close {
+    color: #1976D2;
+}
+
+.react-widget-2 .fa-close:hover {
+    color: #fff;
+}

@@ -1,0 +1,97 @@
+#panel {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #607D8B;
+    color: #fff;
+}
+
+.widget-add {
+    height: 55px;
+    padding: 10px;
+    border-bottom: 1px solid #78909C;
+}
+
+.widget-add:hover {
+    background: #78909C;
+}
+
+.widget-add > img {
+    float: left;
+    margin: 5px;
+}
+
+.widget-add > i {
+    float: right;
+    font-size: 34px;
+    margin: 11px 10px 0 0;
+    cursor: pointer;
+    color: #546E7A;
+}
+
+.widget-add > i:hover {
+    color: #37474F;
+}
+
+span.widget-name {
+    font-size: 20px;
+    margin: 17px 10px 0 10px;
+    display: inline-block;
+}
+
+.widgetMenu {
+    height: 70%;
+    overflow-y: auto;
+}
+
+#logs {
+    padding-left: 10px;
+    height: 30%;
+    padding-top: 5px;
+    background: rgba(255,255,255,0.1);
+}
+
+#logs > span {
+    width: 100%;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #90A4AE;
+}
+
+#logs > span > span {
+    float: right;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 2px 5px 0 0;
+    cursor: pointer;
+}
+
+#logs > div {
+    overflow-y: auto;
+    top: 70%;
+    bottom: 0;
+    position: fixed;
+    width: 290px;
+    margin-top: 22px;
+    padding-bottom: 10px;
+}
+
+#logs > div > * {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.error-log {
+    color: #F57C00;
+}
+
+.loading-log {
+    color: #fff;
+}
+
+.widgetMenu button {
+    width: 100%;
+}

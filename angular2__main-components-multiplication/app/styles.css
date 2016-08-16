@@ -1,0 +1,162 @@
+body {
+    font-family: "Open sans", Helvetica;
+    overflow: hidden;
+}
+
+select,
+button,
+input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.desc {
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+#dynamic-add {
+    text-align: center;
+}
+
+square-component,
+circle-component,
+span#container div.empty-component {
+    width: 78px;
+    height: 48px;
+    text-align: center;
+    float: left;
+    border-radius: 8px;
+    margin: 10px 6px;
+    padding-top: 32px;
+    border: 3px solid #eee;
+}
+
+square-component,
+circle-component {
+    width: 84px;
+    height: 54px;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: #ff0;
+    font-weight: 300;
+    border: none;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.gc-counter {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.gc-title {
+    margin-top: -12px;
+}
+
+.clicks-menu-line {
+    margin: 10px 0;
+}
+
+#reset-counters {
+    background: #fff;
+    color: #c00;
+    border-color: #c00;
+}
+
+#clicks-counter {
+    text-align: center;
+}
+
+#clicks-counter b {
+    font-size: 24px;
+    font-weight: 100;
+    display: block
+}
+
+span#container {
+    display: block;
+}
+
+span#inner-container {
+    float: left;
+    border: 3px dashed #aaa;
+    border-radius: 15px;
+}
+
+span#inner-container > div,
+span#inner-container > square-component,
+span#inner-container > circle-component {
+    margin: 7px 6px;
+}
+
+#dynamic-add {
+    font-size: 14px;
+    padding: 10px;
+}
+
+#dynamic-add > br {
+    display: none;
+}
+
+circle-component {
+    border-radius: 40px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#add-position {
+    width: 45px;
+}
+
+#jquery-box-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.jquery-box {
+    width: 126px;
+    height: 24px;
+    text-align: center;
+    padding: 8px 0 0 0;
+    border: 1px solid #eee;
+    background: #DDD;
+    font-size: 11px;
+    position: relative;
+    left: 0;
+}
+
+@media (max-width: 450px) {
+    #dynamic-add > br {
+        display: block;
+    }
+    #dynamic-add {
+        text-align: center;
+    }
+    select {
+        width: 40%;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 290px) {
+    #dynamic-add > br {
+        display: none;
+    }
+    #dynamic-add > span,
+    select,
+    button,
+    input {
+        display: block;
+        width: 100% !important;
+        margin-bottom: 5px;
+    }
+}

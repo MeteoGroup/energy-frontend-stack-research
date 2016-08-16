@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Adam Misiuda</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+
+        <script type="text/javascript" src="/node_modules/core-js/client/shim.min.js"></script>
+        <script type="text/javascript" src="/node_modules/zone.js/dist/zone.js"></script>
+        <script type="text/javascript" src="/node_modules/reflect-metadata/Reflect.js"></script>
+        <script type="text/javascript" src="/node_modules/systemjs/dist/system.src.js"></script>
+        <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/systemjs.config.js"></script>
+        <script type="text/javascript" src="/app/MainComponentLoader.js"></script>
+        <script type="text/javascript" src="/app/example.js"></script>
+
+        <script type="text/javascript">
+            var loader = null,
+                squareComponentModule = null,
+                circleComponentModule = null;
+            // send requests for new components
+            Promise.all([
+                System.import("@angular/platform-browser-dynamic"),
+                System.import("app/sample-angular2-components/SquareComponent.js"),
+                System.import("app/sample-angular2-components/CircleComponent.js")
+            ]).then(function(modules) {
+                modules[0].bootstrap(modules[1].SquareComponent);
+                modules[0].bootstrap(modules[2].CircleComponent);
+            });
+
+        </script>
+    </head>
+    <body>
+        <div class="desc">
+            This example has been created just to check the behaviour of two dynamically added Angular2 components (not multiplicated).
+        </div>
+        <div id="dynamic-add">
+            <div class="clicks-menu-line">
+                <button onclick="clickAll('circle-component')">Click all circles</button>
+                <button onclick="clickAll('square-component')">Click all squares</button>
+                <button onclick="clickAllNTimes('circle-component', 100)">Send 100 clicks to circles</button>
+                <button onclick="clickAllNTimes('square-component', 100)">Send 100 clicks to squares</button>
+                <button id="reset-counters" onclick="resetCounters()">Reset counters</button>
+            </div>
+            <button onclick="startJqueryAnimations()">Start jQuery animations</button>
+            <div id="clicks-counter"></div>
+        </div>
+        <hr/>
+        <span id="container">
+            <square-component id="f1">Loading...</square-component>
+            <circle-component id="s1">Loading...</circle-component>
+        </span>
+        <div id="jquery-box-container"></div>
+        <script>
+        initListeners();
+        setClickCounterTo(0);
+        </script>
+    </body>
+</html>

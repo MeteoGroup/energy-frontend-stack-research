@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="src/font-awesome/font-awesome.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.core.js"></script>
+        <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Helvetica;
+        }
+        .widget {
+            float: left;
+            margin: 20px 10px 10px 20px;
+        }
+        #widgets-container {
+            background: #ECEFF1;
+            position: absolute;
+            right: 0;
+            left: 300px;
+            overflow-y: auto;
+            bottom: 0;
+            top: 0;
+        }
+        // GRAPH
+        .links line {
+            stroke: #999;
+            stroke-opacity: 0.6;
+        }
+        .nodes circle {
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="panel"></div>
+        <div id="widgets-container"></div>
+
+        <script type="text/javascript" src="system.js"></script>
+        <script type="text/javascript" src="riot.min.js"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+        <script type="text/javascript" src="react-commons.bundle.js" charset="utf-8"></script>
+        <script type="text/javascript" src="container.bundle.js" charset="utf-8"></script>
+    </body>
+</html>

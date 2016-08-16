@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.widget-btn {
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#widgets-container {
+    margin-top: 30px;
+}
+
+.widget-a-btn {
+    background: #8BC34A;
+    border: 1px solid #8BC34A;
+}
+
+.widget-b-btn {
+    background: #607D8B;
+    border: 1px solid #607D8B;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
